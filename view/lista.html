@@ -1,0 +1,43 @@
+<header>
+	<h1>Livraria</h1>
+</header>
+<section class="ng-scope" id="content">
+	<fieldset>
+		<legend>Pesquisa:</legend>
+		<div class="row">
+			<div class="col-sm-12 col-md-4">
+				<label for="iNome">Nome do livro</label>
+				<input type="search" id="iNome" class="form-control" name="nome" placeholder="Nome do livro" ng-model="queryNome.nome">
+			</div>
+			<div class="col-sm-12 col-md-4">
+				<label for="iAutor">Autor do livro</label>
+				<input type="search" id="iAutor" class="form-control" name="autor" placeholder="Autor do livro" ng-model="queryAutor.autor">
+			</div>
+			<div class="col-sm-12 col-md-4">
+				<label for="iSituacao">Situação</label>
+				<select id="iSituacao" class="form-control" ng-model="querySituacao.situacao" ng-options="opcao.valor as opcao.nome for opcao in options"></select>
+			</div>
+		</div>
+	</fieldset>
+	<hr class="divisor">
+	<table class="table table-hover table-striped">
+		<thead>
+			<tr>
+				<th>Livro</th>
+				<th>Autor</th>
+				<th>Situação</th>
+				<th width="40"></th>
+				<th width="40"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in lista | filter:queryNome |filter:queryAutor|filter:querySituacao" class="ng-scope">
+				<td>{{item.nome}}</td>
+				<td>{{item.autor}}</td>
+				<td>{{item.situacao}}</td>
+				<td><button class="btn btn-success" ng-click="updateBook(item)"><span class="ion-edit"></span></button></td>
+				<td><button class="btn btn-danger" ng-click="deleteBook(item, $index)"><span class="ion-close-round"></span></button></td>
+			</tr>
+		</tbody>
+	</table>
+</section>

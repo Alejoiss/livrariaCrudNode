@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Livaria</title>
+		<meta charset="utf-8">
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+		<link href="bower_components/alertifyjs/css/alertify.min.css" rel="stylesheet">
+        <link href="css/app.css" rel="stylesheet">
+	</head>
+	<body ng-app="app">
+		<header>
+			<h1>Novo Cadastro</h1>
+		</header>
+		<section class="ng-scope" id="content">
+			<form name="cadastroForm" ng-submit="save(livro)">
+				<div class="row">
+					<div class="col-md-4">
+						<label>Nome: </label>
+						<input type="text" class="form-control" name="nome" ng-required="true" ng-model="livro.nome" placeholder="Digite o nome do livro">	
+						<span ng-if="cadastroForm.nome.$error.required && cadastroForm.nome.$dirty" class="alert-danger">Campo obrigatório</span>
+					</div>
+					<div class="col-md-4">
+						<label>Autor: </label>
+						<input type="text" class="form-control" name="autor" ng-required="true" ng-model="livro.autor">
+						<span ng-if="cadastroForm.autor.$error.required && cadastroForm.autor.$dirty" class="alert-danger">Campo obrigatório</span>
+					</div>
+					<div class="col-md-4">
+						<label>Situação: </label>
+						<select name="situacao" class="form-control" ng-required="true" ng-model="livro.situacao" ng-options="opcao.valor as opcao.nome for opcao in options"></select>
+						<span ng-if="cadastroForm.situacao.$error.required && cadastroForm.situacao.$dirty" class="alert-danger">Campo obrigatório</span>
+					</div>
+				</div>
+				<button class="btn btn-success" type="submit">Salvar</button>
+			</form>
+		</section>
+
+		<!-- Angular dependecies -->
+        <script src="bower_components/angular/angular.min.js"></script>
+		<script src="bower_components/alertifyjs/alertify.min.js"></script>
+		<script src="bower_components/angular-i18n/angular-locale_pt-br.js"></script>
+		<script src="bower_components/angular-messages/angular-messages.min.js"></script>
+		<script src="bower_components/angular-route/angular-route.min.js"></script>
+
+				<!-- Module dependecy -->
+		<script src="js/controllers/controllers.js"></script>
+		<script src="js/routes/routes.js"></script>
+		<script src="js/services/services.js"></script>
+		<script src="js/app.js"></script>
+
+		<!-- Controllers -->
+		<script src="js/controllers/controllers.js"></script>
+		<script src="js/controllers/cadastroController.js"></script>
+		<script src="js/controllers/listaController.js"></script>
+
+	</body>
+</html>
+

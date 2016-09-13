@@ -1,0 +1,61 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,700';
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	overflow: auto;
+	background-color: #f5f5f5;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1{
+	text-align: center;
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+
+::-webkit-scrollbar-track-piece {
+	background-color: #EEE;
+	border-left: 1px solid #cccccc;
+}
+
+::-webkit-scrollbar-thumb:horizontal,
+::-webkit-scrollbar-thumb:vertical {
+	background-color: #bac0c4;
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover,
+::-webkit-scrollbar-thumb:vertical:hover {
+	background-color: #717171;
+}
+
+#content{
+	padding: 15px 30px;
+}
+
+
+.alert-danger {
+    display: table;
+    margin: 10px 0;
+    background-color: transparent;
+    background-image: none;
+}
+
+form button{
+    margin: 20px 0;
+    float: right;
+}
+
+.navbar-nav li{
+	cursor: pointer;
+}
+
+.navbar-nav li:hover a{
+	color: #03a9f4 !important;
+}
